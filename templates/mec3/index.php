@@ -14,257 +14,177 @@ $app = JFactory::getApplication();
 $menu = $app->getMenu();
 $isFrontPage = $menu->getActive() == $menu->getDefault();
 ?>
-<!DOCTYPE HTML>
-<!--
-	Twenty by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Twenty by HTML5 UP</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="<?php echo $this->baseurl ?>/templates/mec3/css/ie/html5shiv.js"></script><![endif]-->
-		<script src="<?php echo $this->baseurl ?>/templates/mec3/js/jquery.min.js"></script>
-		<script src="<?php echo $this->baseurl ?>/templates/mec3/js/jquery.dropotron.min.js"></script>
-		<script src="<?php echo $this->baseurl ?>/templates/mec3/js/jquery.scrolly.min.js"></script>
-		<script src="<?php echo $this->baseurl ?>/templates/mec3/js/jquery.scrollgress.min.js"></script>
-		<script src="<?php echo $this->baseurl ?>/templates/mec3/js/skel.min.js"></script>
-		<script src="<?php echo $this->baseurl ?>/templates/mec3/js/skel-layers.min.js"></script>
-		<script type="text/javascript">
-			var baseUrl = '<?php echo $this->baseurl ?>/templates/mec3/';
-		</script>
-		<script src="<?php echo $this->baseurl ?>/templates/mec3/js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/mec3/css/skel.css" />
-			<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/mec3/css/style.css" />
-			<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/mec3/css/style-wide.css" />
-			<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/mec3/css/style-noscript.css" />
-		</noscript>
-		<!--[if lte IE 8]><link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/mec3/css/ie/v8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/mec3/css/ie/v9.css" /><![endif]-->
-	</head>
-	<body class="index">
+<!DOCTYPE html>
+<html lang="<?php echo $this->language; ?>">
+<head>
+	<jdoc:include type="head" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="<?php echo $this->baseurl ?>/templates/mec3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo $this->baseurl ?>/templates/mec3/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="<?php echo $this->baseurl ?>/templates/mec3/css/animate.css" rel="stylesheet" />
+    <link href="<?php echo $this->baseurl ?>/templates/mec3/css/style.css" rel="stylesheet">
+	<link href="<?php echo $this->baseurl ?>/templates/mec3/color/default.css" rel="stylesheet">
+</head>
 
-		<!-- Header -->
-			<header id="header" class="alt">
-				<h1 id="logo"><a href="<?php echo $this->baseurl ?>">MEC3 <span>Colombia</span></a></h1>
-				<nav id="nav">
-					<ul>
-						<li class="current"><a href="index.html">Welcome</a></li>
-						<li class="submenu">
-							<a href="">Layouts</a>
-							<ul>
-								<li><a href="left-sidebar.html">Left Sidebar</a></li>
-								<li><a href="right-sidebar.html">Right Sidebar</a></li>
-								<li><a href="no-sidebar.html">No Sidebar</a></li>
-								<li><a href="contact.html">Contact</a></li>
-								<li class="submenu">
-									<a href="">Submenu</a>
-									<ul>
-										<li><a href="#">Dolore Sed</a></li>
-										<li><a href="#">Consequat</a></li>
-										<li><a href="#">Lorem Magna</a></li>
-										<li><a href="#">Sed Magna</a></li>
-										<li><a href="#">Ipsum Nisl</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li><a href="#" class="button special">Sign Up</a></li>
-					</ul>
-				</nav>
-			</header>
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom" <?php if ($isFrontPage) : ?>class="mainpage"<?php endif; ?>>
+	<div id="preloader">
+	  <div id="load"></div>
+	</div>
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="<?php echo $this->baseurl ?>">
+                    <h1>MEC3 <small>Colombia</small></h1>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+				<jdoc:include type="modules" name="menu" />
+            </div>
+        </div>
+    </nav>
+    <?php if ($isFrontPage) : ?>
+    <section id="intro" class="intro"><jdoc:include type="modules" name="banner" style="banner" /></section>
+	<jdoc:include type="modules" name="portada" style="portada" />
+	<!-- Section: contact -->
+    <section id="contact" class="home-section text-center">
+		<div class="heading-contact">
+			<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="wow bounceInDown" data-wow-delay="0.4s">
+					<div class="section-heading">
+					<h2>Get in touch</h2>
+					<i class="fa fa-2x fa-angle-down"></i>
 
-		<!-- Banner -->
-			<section id="banner"><jdoc:include type="modules" name="banner" style="banner" /></section>
+					</div>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="container">
 
-		<!-- Main -->
-			<article id="main">
+		<div class="row">
+			<div class="col-lg-2 col-lg-offset-5">
+				<hr class="marginbot-50">
+			</div>
+		</div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="boxed-grey">
+                <form id="contact-form">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter name" required="required" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+                                <input type="email" class="form-control" id="email" placeholder="Enter email" required="required" /></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">
+                                Subject</label>
+                            <select id="subject" name="subject" class="form-control" required="required">
+                                <option value="na" selected="">Choose One:</option>
+                                <option value="service">General Customer Service</option>
+                                <option value="suggestions">Suggestions</option>
+                                <option value="product">Product Support</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Message</label>
+                            <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                                placeholder="Message"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-skin pull-right" id="btnContactUs">
+                            Send Message</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+		
+		<div class="col-lg-4">
+			<div class="widget-contact">
+				<h5>Main Office</h5>
+				
+				<address>
+				  <strong>Squas Design, Inc.</strong><br>
+				  Tower 795 Folsom Ave, Beautiful Suite 600<br>
+				  San Francisco, CA 94107<br>
+				  <abbr title="Phone">P:</abbr> (123) 456-7890
+				</address>
 
-				<header class="special container">
-					<span class="icon fa-bar-chart-o"></span>
-					<h2>As this is my <strong>twentieth</strong> freebie for HTML5 UP
-					<br />
-					I decided to give it a really creative name.</h2>
-					<p>Turns out <strong>Twenty</strong> was the best I could come up with. Anyway, lame name aside,
-					<br />
-					it's minimally designed, fully responsive, built on HTML5/CSS3/<strong>skel</strong>,
-					and, like all my stuff,
-					<br />
-					released for free under the <a href="http://html5up.net/license">Creative Commons Attribution 3.0</a> license. Have fun!</p>
-				</header>
+				<address>
+				  <strong>Email</strong><br>
+				  <a href="mailto:#">email.name@example.com</a>
+				</address>	
+				<address>
+				  <strong>We're on social networks</strong><br>
+                       	<ul class="company-social">
+                            <li class="social-facebook"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li class="social-twitter"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li class="social-dribble"><a href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                            <li class="social-google"><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                        </ul>	
+				</address>					
+			
+			</div>	
+		</div>
+    </div>	
 
-				<!-- One -->
-					<section class="wrapper style2 container special-alt">
-						<div class="row 50%">
-							<div class="8u 12u(narrower)">
+		</div>
+	</section>
+	<!-- /Section: contact -->
+	<?php else : ?>
+	<div class="container">
+		<jdoc:include type="message" />
+		<jdoc:include type="component" />
+	</div>
+	<?php endif; ?>
+	<?php if ($this->countModules( 'footer' )) : ?>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-lg-12">
+					<div class="wow shake" data-wow-delay="0.4s">
+					<div class="page-scroll marginbot-30">
+						<a href="#intro" id="totop" class="btn btn-circle">
+							<i class="fa fa-angle-double-up animated"></i>
+						</a>
+					</div>
+					</div>
+					<jdoc:include type="modules" name="footer" />
+				</div>
+			</div>	
+		</div>
+	</footer>
+	<?php endif; ?>
+    <!-- Core JavaScript Files -->
+    <script src="<?php echo $this->baseurl ?>/templates/mec3/js/jquery.min.js"></script>
+    <script src="<?php echo $this->baseurl ?>/templates/mec3/js/bootstrap.min.js"></script>
+    <script src="<?php echo $this->baseurl ?>/templates/mec3/js/jquery.easing.min.js"></script>	
+	<script src="<?php echo $this->baseurl ?>/templates/mec3/js/jquery.scrollTo.js"></script>
+	<script src="<?php echo $this->baseurl ?>/templates/mec3/js/wow.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="<?php echo $this->baseurl ?>/templates/mec3/js/custom.js"></script>
 
-								<header>
-									<h2>Behold the <strong>icons</strong> that visualize what you’re all about. or just take up space. your call bro.</h2>
-								</header>
-								<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu comteger ut fermentum lorem. Lorem ipsum dolor sit amet. Sed tristique purus vitae volutpat ultrices. eu elit eget commodo. Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo.</p>
-								<footer>
-									<ul class="buttons">
-										<li><a href="#" class="button">Find Out More</a></li>
-									</ul>
-								</footer>
+</body>
 
-							</div>
-							<div class="4u 12u(narrower) important(narrower)">
-
-								<ul class="featured-icons">
-									<li><span class="icon fa-clock-o"><span class="label">Feature 1</span></span></li>
-									<li><span class="icon fa-volume-up"><span class="label">Feature 2</span></span></li>
-									<li><span class="icon fa-laptop"><span class="label">Feature 3</span></span></li>
-									<li><span class="icon fa-inbox"><span class="label">Feature 4</span></span></li>
-									<li><span class="icon fa-lock"><span class="label">Feature 5</span></span></li>
-									<li><span class="icon fa-cog"><span class="label">Feature 6</span></span></li>
-								</ul>
-
-							</div>
-						</div>
-					</section>
-
-				<!-- Two -->
-					<section class="wrapper style1 container special">
-						<div class="row">
-							<div class="4u 12u(narrower)">
-
-								<section>
-									<span class="icon featured fa-check"></span>
-									<header>
-										<h3>This is Something</h3>
-									</header>
-									<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
-								</section>
-
-							</div>
-							<div class="4u 12u(narrower)">
-
-								<section>
-									<span class="icon featured fa-check"></span>
-									<header>
-										<h3>Also Something</h3>
-									</header>
-									<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
-								</section>
-
-							</div>
-							<div class="4u 12u(narrower)">
-
-								<section>
-									<span class="icon featured fa-check"></span>
-									<header>
-										<h3>Probably Something</h3>
-									</header>
-									<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
-								</section>
-
-							</div>
-						</div>
-					</section>
-
-				<!-- Three -->
-					<section class="wrapper style3 container special">
-
-						<header class="major">
-							<h2>Next look at this <strong>cool stuff</strong></h2>
-						</header>
-
-						<div class="row">
-							<div class="6u 12u(narrower)">
-
-								<section>
-									<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-									<header>
-										<h3>A Really Fast Train</h3>
-									</header>
-									<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
-								</section>
-
-							</div>
-							<div class="6u 12u(narrower)">
-
-								<section>
-									<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-									<header>
-										<h3>An Airport Terminal</h3>
-									</header>
-									<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
-								</section>
-
-							</div>
-						</div>
-						<div class="row">
-							<div class="6u 12u(narrower)">
-
-								<section>
-									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-									<header>
-										<h3>Hyperspace Travel</h3>
-									</header>
-									<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
-								</section>
-
-							</div>
-							<div class="6u 12u(narrower)">
-
-								<section>
-									<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-									<header>
-										<h3>And Another Train</h3>
-									</header>
-									<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
-								</section>
-
-							</div>
-						</div>
-
-						<footer class="major">
-							<ul class="buttons">
-								<li><a href="#" class="button">See More</a></li>
-							</ul>
-						</footer>
-
-					</section>
-
-			</article>
-
-		<!-- CTA -->
-			<section id="cta">
-
-				<header>
-					<h2>Ready to do <strong>something</strong>?</h2>
-					<p>Proin a ullamcorper elit, et sagittis turpis integer ut fermentum.</p>
-				</header>
-				<footer>
-					<ul class="buttons">
-						<li><a href="#" class="button special">Take My Money</a></li>
-						<li><a href="#" class="button">LOL Wut</a></li>
-					</ul>
-				</footer>
-
-			</section>
-
-		<!-- Footer -->
-			<footer id="footer">
-
-				<ul class="icons">
-					<li><a href="#" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon circle fa-google-plus"><span class="label">Google+</span></a></li>
-					<li><a href="#" class="icon circle fa-github"><span class="label">Github</span></a></li>
-					<li><a href="#" class="icon circle fa-dribbble"><span class="label">Dribbble</span></a></li>
-				</ul>
-
-				<ul class="copyright">
-					<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-
-			</footer>
-
-	</body>
 </html>
